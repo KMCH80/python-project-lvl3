@@ -14,3 +14,9 @@ package-reinstall:
 
 lint:
 	poetry run flake8 page-loader
+
+test:
+	poetry run pytest
+
+test-coverage:
+	poetry run pytest --cov=gendiff --cov-report xml tests
