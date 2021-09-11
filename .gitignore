@@ -1,0 +1,12 @@
+.venv/
+.vscode/
+.DS_Store
+.pytest_cache/
+.coverage
+page-loader/__pycache__/
+page-loader/scripts/__pycache__/
+tests/fixtures/__pycache__/
+coverage.xml
+dist/
+tests/__pycache__/
+__pycache__/
