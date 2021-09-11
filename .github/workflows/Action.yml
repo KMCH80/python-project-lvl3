@@ -1,0 +1,36 @@
+name: ACTION
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Python install
+      uses: actions/setup-python@v2
+      with:
+          python-version: 3.8
+    - name: Run image
+      uses: abatilo/actions-poetry@v2.0.0
+      with:
+        poetry-version: 1.1.2
+    - name: Poetry install
+      run: make install
+        
+    - name: Run linter
+      run: make lint
+    
+    - name: Run tests
+      run: make test
+      
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v2.7.4
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: make test-coverage
+        debug: true
