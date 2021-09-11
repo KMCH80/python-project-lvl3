@@ -11,7 +11,7 @@ packages = [
 page-loader = "page-loader.scripts.page-loader:main"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
